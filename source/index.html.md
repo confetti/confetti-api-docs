@@ -11,6 +11,7 @@ toc_footers:
 
 includes:
   - events
+  - tickets
 
 search: false
 
