@@ -279,16 +279,16 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-74866e7e.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-e9bde216.js"></script>
+      <script src="javascripts/all_nosearch-ea811c3e.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;javascript&quot;,&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -296,17 +296,11 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <img src="images/logo-09715e23.png" class="logo" alt="" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="shell">shell</a>
         </div>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
@@ -315,159 +309,269 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#events" class="toc-h1 toc-link" data-title="Events">Events</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#get-all-events" class="toc-h2 toc-link" data-title="Get all events">Get all events</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#get-a-specific-event" class="toc-h2 toc-link" data-title="Get a specific event">Get a specific event</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#tickets" class="toc-h1 toc-link" data-title="Tickets">Tickets</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-ticket-from-an-event" class="toc-h2 toc-link" data-title="Get all ticket from an event">Get all ticket from an event</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-ticket" class="toc-h2 toc-link" data-title="Get a specific ticket">Get a specific ticket</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://confetti.events'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://confetti.events'>Confetti.events</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>Welcome to the Confetti API reference.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Confetti</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">confetti</span><span class="dl">'</span><span class="p">)</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<span class="kd">const</span> <span class="nx">confetti</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Confetti</span><span class="p">({</span> <span class="na">apiKey</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your-key</span><span class="dl">'</span> <span class="p">})</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
+curl <span class="s2">"https://api.confetti.events"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: apikey your-key"</span>
 </code></pre></div>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Make sure to replace <code>your-key</code> with your API key.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>Confetti uses API keys to allow access to the API. You can create a new API key via your Workspace &gt; Settings &gt; API &amp; Webhooks</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>Confetti expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<p><code>Authorization: apikey your-key</code></p>
+<h1 id='events'>Events</h1><h2 id='get-all-events'>Get all events</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.confetti.events/events?filter[signupType]=rsvp&amp;page[limit]=1&amp;page[offset]=10"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: apikey your-key"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  data: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="nb">id</span>: <span class="s1">'16500'</span>,
+      <span class="nb">type</span>: <span class="s1">'event'</span>,
+      attributes: <span class="o">{</span>
+        name: <span class="s1">'My first event'</span>,
+        startDate: <span class="s1">'2020-09-19T16:00:00.000Z'</span>,
+        endDate: <span class="s1">'2020-09-19T19:00:00.000Z'</span>,
+        timeZone: <span class="s1">'Europe/Berlin'</span>,
+        slug: <span class="s1">'green-summer-18717b'</span>,
+        status: <span class="s1">'open'</span>,
+        featureLevel: <span class="s1">'business'</span>,
+        signupType: <span class="s1">'rsvp'</span>,
+        website: <span class="s1">'http://jonny-action.confetti.test/my-first-event'</span>,
+        email: <span class="s1">'jonny.stromberg@gmail.com'</span>,
+        rsvpLimit: 100,
+        rsvpLeft: 85,
+        waitlisted: 0,
+        hasPassed: <span class="nb">false</span>,
+        createdAt: <span class="s1">'2018-10-11T13:06:16.432Z'</span>,
+        updatedAt: <span class="s1">'2020-03-09T20:19:40.956Z'</span>,
+        summary: <span class="s1">'Write a three sentence pitch for your event here.'</span>,
+        timeFormat: <span class="s1">'24'</span>,
+        locale: <span class="s1">'en'</span>,
+        primaryColor: <span class="s1">'#00DB7D'</span>,
+        colors: <span class="o">{}</span>,
+        waitlist: <span class="nb">true</span>,
+        location: <span class="o">{</span>
+          url: <span class="s1">'http://www.google.com/maps?q=undefined'</span>,
+        <span class="o">}</span>,
+      <span class="o">}</span>,
+      relationships: <span class="o">{</span>
+        images: <span class="o">{</span>
+          data: null,
+        <span class="o">}</span>,
+      <span class="o">}</span>,
+    <span class="o">}</span>,
+    meta: <span class="o">{</span>
+      webhookType: <span class="s1">'event.updated'</span>,
+    <span class="o">}</span>
+  <span class="o">]</span>,
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Confetti</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">confetti</span><span class="dl">'</span><span class="p">)</span>
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">confetti</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Confetti</span><span class="p">({</span> <span class="na">apiKey</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your-key</span><span class="dl">'</span> <span class="p">})</span>
+<span class="kd">const</span> <span class="nx">events</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">confetti</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">findAll</span><span class="p">({</span>
+  <span class="na">filter</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">signupType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">rsvp</span><span class="dl">'</span>
+  <span class="p">},</span>
+  <span class="na">page</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">limit</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">offset</span><span class="p">:</span> <span class="mi">10</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">My first event</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">startDate</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-09-19T16:00:00.000Z</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">endDate</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-09-19T19:00:00.000Z</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">timeZone</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Europe/Berlin</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">slug</span><span class="p">:</span> <span class="dl">'</span><span class="s1">green-summer-18717b</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">status</span><span class="p">:</span> <span class="dl">'</span><span class="s1">open</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">featureLevel</span><span class="p">:</span> <span class="dl">'</span><span class="s1">business</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">signupType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">rsvp</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">website</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://jonny-action.confetti.test/my-first-event</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">jonny.stromberg@gmail.com</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">rsvpLimit</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="na">rsvpLeft</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span>
+    <span class="na">waitlisted</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="na">hasPassed</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">createdAt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2018-10-11T13:06:16.432Z</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">updatedAt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-03-09T20:19:40.956Z</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">summary</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Write a three sentence pitch for your event here.</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">timeFormat</span><span class="p">:</span> <span class="dl">'</span><span class="s1">24</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">locale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">en</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">primaryColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#00DB7D</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">colors</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="na">waitlist</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">location</span><span class="p">:</span> <span class="p">{</span> <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://www.google.com/maps?q=undefined</span><span class="dl">'</span> <span class="p">},</span>
+    <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">16500</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">event</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">images</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="na">meta</span><span class="p">:</span> <span class="p">{</span> <span class="na">webhookType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">event.updated</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">}</span>
+<span class="p">]</span>
 </code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
+<p>This endpoint retrieves all events in your workspace.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<p><code>GET https://api.confetti.events/events</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Filter</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>signupType</td>
+<td>-</td>
+<td><code>rsvp</code> or <code>tickets</code></td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>type</td>
+<td>-</td>
+<td>Do you only want to show events that have taken place or will take place? The option are: <code>future</code> or <code>past</code></td>
 </tr>
 </tbody></table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<table><thead>
+<tr>
+<th>Page</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>1000</td>
+<td>Set if you don&#39;t want to find all events at the same time</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>0</td>
+<td>Skip the first events</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-event'>Get a specific event</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.confetti.events/events/2"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: apikey your-key"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  data: <span class="o">{</span>
+    <span class="nb">id</span>: <span class="s1">'16500'</span>,
+    <span class="nb">type</span>: <span class="s1">'event'</span>,
+    attributes: <span class="o">{</span>
+      name: <span class="s1">'My first event'</span>,
+      startDate: <span class="s1">'2020-09-19T16:00:00.000Z'</span>,
+      endDate: <span class="s1">'2020-09-19T19:00:00.000Z'</span>,
+      timeZone: <span class="s1">'Europe/Berlin'</span>,
+      slug: <span class="s1">'green-summer-18717b'</span>,
+      status: <span class="s1">'open'</span>,
+      featureLevel: <span class="s1">'business'</span>,
+      signupType: <span class="s1">'rsvp'</span>,
+      website: <span class="s1">'http://jonny-action.confetti.test/my-first-event'</span>,
+      email: <span class="s1">'jonny.stromberg@gmail.com'</span>,
+      rsvpLimit: 100,
+      rsvpLeft: 85,
+      waitlisted: 0,
+      hasPassed: <span class="nb">false</span>,
+      createdAt: <span class="s1">'2018-10-11T13:06:16.432Z'</span>,
+      updatedAt: <span class="s1">'2020-03-09T20:19:40.956Z'</span>,
+      summary: <span class="s1">'Write a three sentence pitch for your event here.'</span>,
+      timeFormat: <span class="s1">'24'</span>,
+      locale: <span class="s1">'en'</span>,
+      primaryColor: <span class="s1">'#00DB7D'</span>,
+      colors: <span class="o">{}</span>,
+      waitlist: <span class="nb">true</span>,
+      location: <span class="o">{</span>
+        url: <span class="s1">'http://www.google.com/maps?q=undefined'</span>,
+      <span class="o">}</span>,
+    <span class="o">}</span>,
+    relationships: <span class="o">{</span>
+      images: <span class="o">{</span>
+        data: null,
+      <span class="o">}</span>,
+    <span class="o">}</span>,
+  <span class="o">}</span>,
+  meta: <span class="o">{</span>
+    webhookType: <span class="s1">'event.updated'</span>,
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Confetti</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">confetti</span><span class="dl">'</span><span class="p">)</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">confetti</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Confetti</span><span class="p">({</span> <span class="na">apiKey</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your-key</span><span class="dl">'</span> <span class="p">})</span>
+<span class="kd">const</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">confetti</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">My first event</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">startDate</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-09-19T16:00:00.000Z</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">endDate</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-09-19T19:00:00.000Z</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">timeZone</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Europe/Berlin</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">slug</span><span class="p">:</span> <span class="dl">'</span><span class="s1">green-summer-18717b</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">status</span><span class="p">:</span> <span class="dl">'</span><span class="s1">open</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">featureLevel</span><span class="p">:</span> <span class="dl">'</span><span class="s1">business</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">signupType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">rsvp</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">website</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://jonny-action.confetti.test/my-first-event</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">jonny.stromberg@gmail.com</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">rsvpLimit</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+  <span class="nx">rsvpLeft</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span>
+  <span class="nx">waitlisted</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nx">hasPassed</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">createdAt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2018-10-11T13:06:16.432Z</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">updatedAt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-03-09T20:19:40.956Z</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">summary</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Write a three sentence pitch for your event here.</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">timeFormat</span><span class="p">:</span> <span class="dl">'</span><span class="s1">24</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">locale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">en</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">primaryColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#00DB7D</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">colors</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="nx">waitlist</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">location</span><span class="p">:</span> <span class="p">{</span> <span class="nl">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://www.google.com/maps?q=undefined</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="nx">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">16500</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">event</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">images</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nx">meta</span><span class="p">:</span> <span class="p">{</span> <span class="nl">webhookType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">event.updated</span><span class="dl">'</span> <span class="p">},</span>
+<span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>This endpoint retrieves a specific event.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><code>GET https://api.confetti.events/events/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -477,37 +581,226 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>The ID of the event to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='tickets'>Tickets</h1><h2 id='get-all-ticket-from-an-event'>Get all ticket from an event</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Confetti</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">confetti</span><span class="dl">'</span><span class="p">)</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-X</span> DELETE
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">confetti</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Confetti</span><span class="p">({</span> <span class="na">apiKey</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your-key</span><span class="dl">'</span> <span class="p">})</span>
+<span class="kd">const</span> <span class="nx">tickets</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">confetti</span><span class="p">.</span><span class="nx">tickets</span><span class="p">.</span><span class="nx">findAll</span><span class="p">({</span>
+  <span class="na">filter</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">eventId</span><span class="p">:</span> <span class="mi">16969</span>
+  <span class="p">},</span>
+  <span class="na">page</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">limit</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="na">offset</span><span class="p">:</span> <span class="mi">3</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">persons</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">hashid</span><span class="p">:</span> <span class="dl">'</span><span class="s1">g265xg</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">My cool batch</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">price</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="na">currency</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SEK</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Foo Bar</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">foo@bar.com</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">token</span><span class="p">:</span> <span class="dl">'</span><span class="s1">d92614282978451b7942fffda421df47740c</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">status</span><span class="p">:</span> <span class="dl">'</span><span class="s1">attending</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">emailStatus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">subscribed</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">checkinAt</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="na">waitlistAt</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="na">startDate</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2021-06-18T16:00:00.000Z</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">endDate</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="na">values</span><span class="p">:</span> <span class="p">{</span> <span class="dl">'</span><span class="s1">field-one-field</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Veg</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">field-what-do-you-think</span><span class="dl">'</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Yes</span><span class="dl">'</span><span class="p">]</span> <span class="p">},</span>
+    <span class="na">comment</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="na">guests</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="na">termsAcceptedAt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-03-09T19:53:30.304Z</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">deletionRequestedAt</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="na">createdAt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-03-09T19:51:32.274Z</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">updatedAt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-03-09T19:53:30.354Z</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">ticketBatchId</span><span class="p">:</span> <span class="mi">16090</span><span class="p">,</span>
+    <span class="na">paymentId</span><span class="p">:</span> <span class="mi">288297</span><span class="p">,</span>
+    <span class="na">eventId</span><span class="p">:</span> <span class="mi">16969</span><span class="p">,</span>
+    <span class="na">contactId</span><span class="p">:</span> <span class="mi">112395</span><span class="p">,</span>
+    <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">3344691</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ticket</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">meta</span><span class="p">:</span> <span class="p">{</span> <span class="na">webhookType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ticket.attending</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.confetti.events/tickets?filter[eventId]=16969"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: apikey your-key"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  data: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="nb">id</span>: <span class="s1">'3344691'</span>,
+      <span class="nb">type</span>: <span class="s1">'ticket'</span>,
+      attributes: <span class="o">{</span>
+        persons: 1,
+        hashid: <span class="s1">'g265xg'</span>,
+        description: <span class="s1">'My cool batch'</span>,
+        price: 10,
+        currency: <span class="s1">'SEK'</span>,
+        name: <span class="s1">'Foo Bar'</span>,
+        email: <span class="s1">'foo@bar.com'</span>,
+        token: <span class="s1">'d92614282978451b7942fffda421df47740c'</span>,
+        status: <span class="s1">'attending'</span>,
+        emailStatus: <span class="s1">'subscribed'</span>,
+        checkinAt: null,
+        waitlistAt: null,
+        startDate: <span class="s1">'2021-06-18T16:00:00.000Z'</span>,
+        endDate: null,
+        values: <span class="o">{</span>
+          <span class="s1">'field-one-field'</span>: <span class="s1">'Veg'</span>,
+          <span class="s1">'field-what-do-you-think'</span>: <span class="o">[</span><span class="s1">'Yes'</span><span class="o">]</span>,
+        <span class="o">}</span>,
+        comment: null,
+        guests: 0,
+        termsAcceptedAt: <span class="s1">'2020-03-09T19:53:30.304Z'</span>,
+        deletionRequestedAt: null,
+        createdAt: <span class="s1">'2020-03-09T19:51:32.274Z'</span>,
+        updatedAt: <span class="s1">'2020-03-09T19:53:30.354Z'</span>,
+        ticketBatchId: 16090,
+        paymentId: 288297,
+        eventId: 16969,
+        contactId: 112395,
+      <span class="o">}</span>,
+    <span class="o">}</span>
+  <span class="o">]</span>
+<span class="o">}</span>
 </code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<p>This endpoint retrieves all tickets for an event.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.confetti.events/tickets?filter[eventId]=&lt;ID&gt;</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Filter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>eventId</td>
+<td>-</td>
+<td><code>rsvp</code> or <code>tickets</code></td>
+</tr>
+<tr>
+<td>search</td>
+<td>-</td>
+<td>Do you only want to show events that have taken place or will take place? The option are: <code>future</code> or <code>past</code></td>
+</tr>
+<tr>
+<td>description</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>checkedIn</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Page</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>1000</td>
+<td>Set if you don&#39;t want to find all events at the same time</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>0</td>
+<td>Skip the first events</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-ticket'>Get a specific ticket</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Confetti</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">confetti</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">confetti</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Confetti</span><span class="p">({</span> <span class="na">apiKey</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your-key</span><span class="dl">'</span> <span class="p">})</span>
+<span class="kd">const</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">confetti</span><span class="p">.</span><span class="nx">tickets</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="nl">persons</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nx">hashid</span><span class="p">:</span> <span class="dl">'</span><span class="s1">g265xg</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">My cool batch</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">price</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">currency</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SEK</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Foo Bar</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">foo@bar.com</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">token</span><span class="p">:</span> <span class="dl">'</span><span class="s1">d92614282978451b7942fffda421df47740c</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">status</span><span class="p">:</span> <span class="dl">'</span><span class="s1">attending</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">emailStatus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">subscribed</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">checkinAt</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nx">waitlistAt</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nx">startDate</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2021-06-18T16:00:00.000Z</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">endDate</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nx">values</span><span class="p">:</span> <span class="p">{</span> <span class="dl">'</span><span class="s1">field-one-field</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Veg</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">field-what-do-you-think</span><span class="dl">'</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Yes</span><span class="dl">'</span><span class="p">]</span> <span class="p">},</span>
+  <span class="nx">comment</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nx">guests</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nx">termsAcceptedAt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-03-09T19:53:30.304Z</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">deletionRequestedAt</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nx">createdAt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-03-09T19:51:32.274Z</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">updatedAt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-03-09T19:53:30.354Z</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">ticketBatchId</span><span class="p">:</span> <span class="mi">16090</span><span class="p">,</span>
+  <span class="nx">paymentId</span><span class="p">:</span> <span class="mi">288297</span><span class="p">,</span>
+  <span class="nx">eventId</span><span class="p">:</span> <span class="mi">16969</span><span class="p">,</span>
+  <span class="nx">contactId</span><span class="p">:</span> <span class="mi">112395</span><span class="p">,</span>
+  <span class="nx">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">3344691</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ticket</span><span class="dl">'</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.confetti.events/tickets/2"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: apikey your-key"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  data: <span class="o">{</span>
+    <span class="nb">id</span>: <span class="s1">'3344691'</span>,
+    <span class="nb">type</span>: <span class="s1">'ticket'</span>,
+    attributes: <span class="o">{</span>
+      persons: 1,
+      hashid: <span class="s1">'g265xg'</span>,
+      description: <span class="s1">'My cool batch'</span>,
+      price: 10,
+      currency: <span class="s1">'SEK'</span>,
+      name: <span class="s1">'Foo Bar'</span>,
+      email: <span class="s1">'foo@bar.com'</span>,
+      token: <span class="s1">'d92614282978451b7942fffda421df47740c'</span>,
+      status: <span class="s1">'attending'</span>,
+      emailStatus: <span class="s1">'subscribed'</span>,
+      checkinAt: null,
+      waitlistAt: null,
+      startDate: <span class="s1">'2021-06-18T16:00:00.000Z'</span>,
+      endDate: null,
+      values: <span class="o">{</span>
+        <span class="s1">'field-one-field'</span>: <span class="s1">'Veg'</span>,
+        <span class="s1">'field-what-do-you-think'</span>: <span class="o">[</span><span class="s1">'Yes'</span><span class="o">]</span>,
+      <span class="o">}</span>,
+      comment: null,
+      guests: 0,
+      termsAcceptedAt: <span class="s1">'2020-03-09T19:53:30.304Z'</span>,
+      deletionRequestedAt: null,
+      createdAt: <span class="s1">'2020-03-09T19:51:32.274Z'</span>,
+      updatedAt: <span class="s1">'2020-03-09T19:53:30.354Z'</span>,
+      ticketBatchId: 16090,
+      paymentId: 288297,
+      eventId: 16969,
+      contactId: 112395,
+    <span class="o">}</span>,
+  <span class="o">}</span>,
+<span class="o">}</span>
+</code></pre></div>
+<p>This endpoint retrieves a specific ticket.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.confetti.events/tickets/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -516,75 +809,15 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>The ID of the ticket to retrieve</td>
 </tr>
 </tbody></table>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="shell">shell</a>
           </div>
       </div>
     </div>
