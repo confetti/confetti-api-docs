@@ -6,12 +6,14 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='https://confetti.events'>Sign Up for a Developer Key</a>
   - <a href='https://confetti.events'>Confetti.events</a>
 
 includes:
   - events
   - tickets
+  - payments
+  - webhooks
+  - workspaces
 
 search: false
 
@@ -30,7 +32,6 @@ Welcome to the Confetti API reference.
 const Confetti = require('confetti')
 
 const confetti = new Confetti({ apiKey: 'your-key' })
-
 ```
 
 ```shell
@@ -46,8 +47,3 @@ Confetti uses API keys to allow access to the API. You can create a new API key 
 Confetti expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: apikey your-key`
-
-
-
-
-

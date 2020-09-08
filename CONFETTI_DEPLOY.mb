@@ -1,0 +1,4 @@
+0. Installera [Ruby & Bundler & Sätt igång Slate](https://github.com/slatedocs/slate/wiki/Using-Slate-Natively#installing-dependencies-on-macos)
+1. `npm install`
+2. Generera nya markdown-filer via `./bin/generate-docs.js`
+3. Deploya uppdateringen via `./deploy.sh`
