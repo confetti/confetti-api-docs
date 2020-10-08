@@ -73,6 +73,13 @@ This endoint retreives all webhooks.
 ### HTTP Request
 `GET https://api.confetti.events/webhooks`
 
+### URL Parameters
+
+Parameter | Default | Values
+- | - | - | -
+eventId |  | number 
+
+
 Page | Default | Description
 - | - | -
 limit | 1000 | Maximum number of results
