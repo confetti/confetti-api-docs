@@ -279,7 +279,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-74866e7e.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-afb6f0aa.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all_nosearch-ea811c3e.js"></script>
 
@@ -553,42 +553,33 @@ curl <span class="s2">"https://api.confetti.events/events?filter[signupType]=rsv
 <p>This endoint retreives all events.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.confetti.events/events</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Values</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>signupType</td>
-<td></td>
-<td>,</td>
-</tr>
-<tr>
-<td>type</td>
-<td></td>
-<td>,</td>
-</tr>
-</tbody></table>
 
 <table><thead>
 <tr>
-<th>Page</th>
+<th>URL Parameter</th>
 <th>Default</th>
-<th>Description</th>
+<th>Values/Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>limit</td>
+<td>filter[type]</td>
+<td></td>
+<td><code>future</code>, <code>past</code></td>
+</tr>
+<tr>
+<td>page[limit]</td>
 <td>1000</td>
 <td>Maximum number of results</td>
 </tr>
 <tr>
-<td>offset</td>
+<td>page[offset]</td>
 <td>0</td>
 <td>Skip X results</td>
+</tr>
+<tr>
+<td>include</td>
+<td></td>
+<td><code>categories</code>, <code>pages</code>, <code>pages.blocks</code>, <code>pages.blocks.images</code></td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-event'>Get a specific event</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
@@ -679,16 +670,18 @@ curl <span class="s2">"https://api.confetti.events/events/2"</span>
 <p>This endpoint retrieves a specific event.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.confetti.events/events/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>URL Parameter</th>
+<th>Default</th>
+<th>Values/Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the record to retrieve</td>
+<td>include</td>
+<td></td>
+<td><code>categories</code>, <code>pages</code>, <code>pages.blocks</code>, <code>pages.blocks.images</code></td>
 </tr>
 </tbody></table>
 <h1 id='tickets'>Tickets</h1><h2 id='get-all-tickets'>Get all tickets</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
@@ -859,55 +852,41 @@ curl <span class="s2">"https://api.confetti.events/tickets?filter[eventId]=16969
 <p>This endoint retreives all tickets.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.confetti.events/tickets</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>URL Parameter</th>
 <th>Default</th>
-<th>Values</th>
+<th>Values/Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>eventId*</td>
-<td></td>
-<td>number</td>
-</tr>
-<tr>
-<td>search</td>
+<td>filter[search]</td>
 <td></td>
 <td>string</td>
 </tr>
 <tr>
-<td>description</td>
+<td>filter[description]</td>
 <td></td>
 <td>string</td>
 </tr>
 <tr>
-<td>checkedIn</td>
+<td>filter[checkedIn]</td>
 <td></td>
 <td>boolean</td>
 </tr>
 <tr>
-<td>status</td>
-<td>attending, waitlist, declined, invited, consumed, deletion.requested</td>
+<td>filter[status]</td>
 <td>attending, waitlist, declined, invited, consumed, deletion-requested</td>
+<td><code>attending</code>, <code>waitlist</code>, <code>declined</code>, <code>invited</code>, <code>consumed</code>, <code>deletion-requested</code></td>
 </tr>
-</tbody></table>
-
-<table><thead>
 <tr>
-<th>Page</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>limit</td>
+<td>page[limit]</td>
 <td>1000</td>
 <td>Maximum number of results</td>
 </tr>
 <tr>
-<td>offset</td>
+<td>page[offset]</td>
 <td>0</td>
 <td>Skip X results</td>
 </tr>
@@ -1004,18 +983,6 @@ curl <span class="s2">"https://api.confetti.events/tickets/2"</span>
 <p>This endpoint retrieves a specific ticket.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.confetti.events/tickets/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the record to retrieve</td>
-</tr>
-</tbody></table>
 <h1 id='payments'>Payments</h1><h2 id='get-all-payments'>Get all payments</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="kd">const</span> <span class="nx">Confetti</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">confetti</span><span class="dl">'</span><span class="p">)</span>
 
@@ -1124,40 +1091,26 @@ curl <span class="s2">"https://api.confetti.events/payments?filter[eventId]=1696
 <p>This endoint retreives all payments.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.confetti.events/payments</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Values</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>eventId*</td>
-<td></td>
-<td>number</td>
-</tr>
-<tr>
-<td>status</td>
-<td>paid, refunded, pending-invoice, sent-invoice, paid-invoice, cancelled-invoice</td>
-<td>paid, refunded, pending-invoice, sent-invoice, paid-invoice, cancelled-invoice</td>
-</tr>
-</tbody></table>
 
 <table><thead>
 <tr>
-<th>Page</th>
+<th>URL Parameter</th>
 <th>Default</th>
-<th>Description</th>
+<th>Values/Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>limit</td>
+<td>filter[status]</td>
+<td>paid, refunded, pending-invoice, sent-invoice, paid-invoice, cancelled-invoice</td>
+<td><code>paid</code>, <code>refunded</code>, <code>pending-invoice</code>, <code>sent-invoice</code>, <code>paid-invoice</code>, <code>cancelled-invoice</code></td>
+</tr>
+<tr>
+<td>page[limit]</td>
 <td>1000</td>
 <td>Maximum number of results</td>
 </tr>
 <tr>
-<td>offset</td>
+<td>page[offset]</td>
 <td>0</td>
 <td>Skip X results</td>
 </tr>
@@ -1224,18 +1177,6 @@ curl <span class="s2">"https://api.confetti.events/payments/2"</span>
 <p>This endpoint retrieves a specific payment.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.confetti.events/payments/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the record to retrieve</td>
-</tr>
-</tbody></table>
 <h1 id='webhooks'>Webhooks</h1><h2 id='get-all-webhooks'>Get all webhooks</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="kd">const</span> <span class="nx">Confetti</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">confetti</span><span class="dl">'</span><span class="p">)</span>
 
@@ -1298,35 +1239,21 @@ curl <span class="s2">"https://api.confetti.events/webhooks"</span>
 <p>This endoint retreives all webhooks.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.confetti.events/webhooks</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Values</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>eventId</td>
-<td></td>
-<td>number</td>
-</tr>
-</tbody></table>
 
 <table><thead>
 <tr>
-<th>Page</th>
+<th>URL Parameter</th>
 <th>Default</th>
-<th>Description</th>
+<th>Values/Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>limit</td>
+<td>page[limit]</td>
 <td>1000</td>
 <td>Maximum number of results</td>
 </tr>
 <tr>
-<td>offset</td>
+<td>page[offset]</td>
 <td>0</td>
 <td>Skip X results</td>
 </tr>
@@ -1368,18 +1295,6 @@ curl <span class="s2">"https://api.confetti.events/webhooks/2"</span>
 <p>This endpoint retrieves a specific webhook.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.confetti.events/webhooks/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the record to retrieve</td>
-</tr>
-</tbody></table>
 <h1 id='workspaces'>Workspaces</h1><h2 id='get-your-workspace'>Get your workspace</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kc">undefined</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
  <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
