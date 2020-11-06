@@ -179,21 +179,14 @@ This endoint retreives all tickets.
 ### HTTP Request
 `GET https://api.confetti.events/tickets`
 
-### URL Parameters
-
-Parameter | Default | Values
-- | - | - | -
-eventId* |  | number 
-search |  | string 
-description |  | string 
-checkedIn |  | boolean 
-status | attending, waitlist, declined, invited, consumed, deletion.requested | attending, waitlist, declined, invited, consumed, deletion-requested 
-
-
-Page | Default | Description
-- | - | -
-limit | 1000 | Maximum number of results
-offset | 0 | Skip X results
+URL Parameter | Default | Values/Description
+- | - | - | -filter[eventId]* |  | number 
+filter[search] |  | string 
+filter[description] |  | string 
+filter[checkedIn] |  | boolean 
+filter[status] | attending, waitlist, declined, invited, consumed, deletion-requested | `attending`, `waitlist`, `declined`, `invited`, `consumed`, `deletion-requested` 
+page[limit] | 1000 | Maximum number of results
+page[offset] | 0 | Skip X results
 
 
 ## Get a specific ticket
@@ -300,8 +293,4 @@ This endpoint retrieves a specific ticket.
 ### HTTP Request
 `GET https://api.confetti.events/tickets/<ID>`
 
-### URL Parameters
-Parameter | Description
---------- | -----------
-ID | The ID of the record to retrieve
   

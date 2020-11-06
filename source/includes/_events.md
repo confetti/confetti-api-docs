@@ -171,19 +171,12 @@ This endoint retreives all events.
 ### HTTP Request
 `GET https://api.confetti.events/events`
 
-### URL Parameters
-
-Parameter | Default | Values
-- | - | - | -
-signupType |  | ,  
-type |  | ,  
-
-
-Page | Default | Description
-- | - | -
-limit | 1000 | Maximum number of results
-offset | 0 | Skip X results
-
+URL Parameter | Default | Values/Description
+- | - | - | -filter[signupType] |  | `rsvp`, `tickets` 
+filter[type] |  | `future`, `past` 
+page[limit] | 1000 | Maximum number of results
+page[offset] | 0 | Skip X results
+include |  | `categories`, `pages`, `pages.blocks`, `pages.blocks.images`
 
 ## Get a specific event
 ```javascript
@@ -285,8 +278,7 @@ This endpoint retrieves a specific event.
 ### HTTP Request
 `GET https://api.confetti.events/events/<ID>`
 
-### URL Parameters
-Parameter | Description
---------- | -----------
-ID | The ID of the record to retrieve
   
+URL Parameter | Default | Values/Description
+- | - | - | - 
+include |  | `categories`, `pages`, `pages.blocks`, `pages.blocks.images`

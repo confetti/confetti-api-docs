@@ -1,42 +1,49 @@
-
 .toc-wrapper {
-  font-size:18px !important;
+  font-size: 18px !important;
   font-weight: 600 !important;
 }
-.toc-wrapper ul, .toc-wrapper li {
+.toc-wrapper ul,
+.toc-wrapper li {
   line-height: 38px !important;
 }
 
-
 .content h1 {
-  background-color:transparent;
-  border:none;
-  font-size:34px;
+  background-color: transparent;
+  border: none;
+  font-size: 34px;
   font-weight: 300;
-  border-bottom:solid 1px #eee;
+  border-bottom: solid 1px #eee;
 }
 
 .content table {
+  display: table;
   background-color: #fff;
-  box-shadow: 0 1px 2px rgba(0,0,0,.2);
-  margin-left:28px;
-  width:40%;
-  padding:0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  margin-left: 28px;
+  width: 40%;
+  padding: 0;
   @media (max-width: $phone-width) {
-    width:auto;
-    margin:0;
-    padding:28px;
+    width: auto;
+    margin: 0;
+    padding: 28px;
+  }
+  tbody,
+  thead {
+    width: 100%;
   }
 }
 
 .content table tr:last-child {
-  border-bottom:none;
+  border-bottom: none;
 }
 .content table th {
   border-bottom-color: #eee;
 }
 
-body, button, html, input {
+body,
+button,
+html,
+input {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

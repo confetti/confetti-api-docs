@@ -73,17 +73,10 @@ This endoint retreives all webhooks.
 ### HTTP Request
 `GET https://api.confetti.events/webhooks`
 
-### URL Parameters
-
-Parameter | Default | Values
-- | - | - | -
-eventId |  | number 
-
-
-Page | Default | Description
-- | - | -
-limit | 1000 | Maximum number of results
-offset | 0 | Skip X results
+URL Parameter | Default | Values/Description
+- | - | - | -filter[eventId] |  | number 
+page[limit] | 1000 | Maximum number of results
+page[offset] | 0 | Skip X results
 
 
 ## Get a specific webhook
@@ -135,8 +128,4 @@ This endpoint retrieves a specific webhook.
 ### HTTP Request
 `GET https://api.confetti.events/webhooks/<ID>`
 
-### URL Parameters
-Parameter | Description
---------- | -----------
-ID | The ID of the record to retrieve
   

@@ -35,7 +35,7 @@ This endpoint retrieves your ${key}.
 
 const findOneExample = (model) => {
   const { name, endpoint, key } = model
-  return `
+  str = `
 ## Get a specific ${key}
 \`\`\`javascript
 ${code[endpoint].find.javascript()}
@@ -56,11 +56,15 @@ This endpoint retrieves a specific ${key}.
 ### HTTP Request
 \`GET https://api.confetti.events/${endpoint}/<ID>\`
 
-### URL Parameters
-Parameter | Description
---------- | -----------
-ID | The ID of the record to retrieve
   `
+  if (model.includes) {
+    str += `
+URL Parameter | Default | Values/Description
+- | - | - | - 
+`
+    str += `include |  | ` + model.includes.map((i) => '`' + i + '`').join(', ')
+  }
+  return str
 }
 
 const findAllExample = (model, { namePlural }) => {
@@ -87,21 +91,18 @@ ${JSON.stringify(model.sample.multiple.raw, null, 1)}
   str += `### HTTP Request\n`
   str += `\`GET https://api.confetti.events/${endpoint}\`\n`
 
-  if (model.filters && Object.keys(model.filters).length) {
-    str += `
-### URL Parameters
-
-Parameter | Default | Values
-- | - | - | -
-${queryParametersTable(model.filters)}
-`
-  }
   str += `
-Page | Default | Description
-- | - | -
-limit | 1000 | Maximum number of results
-offset | 0 | Skip X results
+URL Parameter | Default | Values/Description
+- | - | - | -`
+  if (model.filters && Object.keys(model.filters).length) {
+    str += queryParametersTable(model.filters)
+  }
+  str += `page[limit] | 1000 | Maximum number of results
+page[offset] | 0 | Skip X results
 `
+  if (model.includes) {
+    str += `include |  | ` + model.includes.map((i) => '`' + i + '`').join(', ')
+  }
   return str
 }
 
@@ -110,7 +111,7 @@ const queryValues = (filter) => {
     return filter.type
   }
   const values = filter.values.map((value) => {
-    return value.value
+    return '`' + value.value + '`'
   })
   return values.join(', ')
 }
@@ -127,7 +128,7 @@ const queryParametersTable = (filters) => {
   let str = ''
   for (const filterName in filters) {
     const filter = filters[filterName]
-    str += filterName
+    str += `filter[${filterName}]`
     if (filter.required) str += '*'
     str += ` | ${queryDefaultValue(filter)}`
     str += ` | ${queryValues(filter)} \n`

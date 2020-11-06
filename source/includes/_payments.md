@@ -119,18 +119,11 @@ This endoint retreives all payments.
 ### HTTP Request
 `GET https://api.confetti.events/payments`
 
-### URL Parameters
-
-Parameter | Default | Values
-- | - | - | -
-eventId* |  | number 
-status | paid, refunded, pending-invoice, sent-invoice, paid-invoice, cancelled-invoice | paid, refunded, pending-invoice, sent-invoice, paid-invoice, cancelled-invoice 
-
-
-Page | Default | Description
-- | - | -
-limit | 1000 | Maximum number of results
-offset | 0 | Skip X results
+URL Parameter | Default | Values/Description
+- | - | - | -filter[eventId]* |  | number 
+filter[status] | paid, refunded, pending-invoice, sent-invoice, paid-invoice, cancelled-invoice | `paid`, `refunded`, `pending-invoice`, `sent-invoice`, `paid-invoice`, `cancelled-invoice` 
+page[limit] | 1000 | Maximum number of results
+page[offset] | 0 | Skip X results
 
 
 ## Get a specific payment
@@ -207,8 +200,4 @@ This endpoint retrieves a specific payment.
 ### HTTP Request
 `GET https://api.confetti.events/payments/<ID>`
 
-### URL Parameters
-Parameter | Description
---------- | -----------
-ID | The ID of the record to retrieve
   
