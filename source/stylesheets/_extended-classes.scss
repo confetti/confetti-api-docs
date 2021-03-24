@@ -4,33 +4,57 @@
 }
 .toc-wrapper ul,
 .toc-wrapper li {
-  line-height: 38px !important;
+  line-height: 45px !important;
+}
+.toc-link,
+.toc-footer li {
+  padding: 0 30px;
+}
+.toc-wrapper .toc-h2 {
+  padding-left: 30px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .content h1 {
   background-color: transparent;
   border: none;
-  font-size: 34px;
-  font-weight: 300;
-  border-bottom: solid 1px #eee;
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 100px;
+  border-bottom: solid 1px #e6e6e6;
+  margin-bottom: 2em;
+}
+.content h2 {
+  padding-bottom: 0.5em;
+  border-top: 0;
+  padding-top: 0;
 }
 
 .content table {
   display: table;
   background-color: #fff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  margin-left: 28px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-left: 35px;
+  margin-top: 1.5em;
   width: 40%;
   padding: 0;
   @media (max-width: $phone-width) {
     width: auto;
     margin: 0;
-    padding: 28px;
+    padding: 35px;
   }
   tbody,
   thead {
     width: 100%;
   }
+}
+.content table th,
+.content table td {
+  padding: 10px 15px;
+  font-size: 13px;
 }
 
 .content table tr:last-child {
@@ -38,6 +62,15 @@
 }
 .content table th {
   border-bottom-color: #eee;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.content p,
+.content li,
+.content dt,
+.content dd {
+  line-height: 1.45;
 }
 
 body,

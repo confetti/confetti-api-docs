@@ -32,12 +32,12 @@ $lang-select-pressed-text: #fff !default; // color of language tab text when mou
 $nav-width: 230px !default; // width of the navbar
 $examples-width: 50% !default; // portion of the screen taken up by code examples
 $logo-margin: 0px !default; // margin below logo
-$main-padding: 28px !default; // padding to left and right of content & examples
+$main-padding: 50px; // padding to left and right of content & examples
 $nav-padding: 15px !default; // padding to left and right of navbar
 $nav-v-padding: 10px !default; // padding used vertically around search boxes and results
 $nav-indent: 10px !default; // extra padding for ToC subitems
 $code-annotation-padding: 13px !default; // padding inside code annotations
-$h1-margin-bottom: 21px !default; // padding under the largest header tags
+$h1-margin-bottom: 10px; // padding under the largest header tags
 $tablet-width: 930px !default; // min width before reverting to tablet size
 $phone-width: $tablet-width - $nav-width !default; // min width before reverting to mobile size
 
@@ -62,6 +62,7 @@ $code-font: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono',
   font-family: $code-font;
   font-size: 12px;
   line-height: 1.5;
+  font-weight: 600;
 }
 
 // OTHER

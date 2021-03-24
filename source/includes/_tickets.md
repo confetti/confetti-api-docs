@@ -17,7 +17,7 @@ const tickets = await confetti.tickets.findAll({
 })
         
 ```
-```javascript
+```json
 [
  {
   "persons": 1,
@@ -97,7 +97,7 @@ curl "https://api.confetti.events/tickets?filter[eventId]=16969"
   -H "Authorization: apikey your-key"
         
 ```
-```shell
+```json
 {
  "data": [
   {
@@ -176,8 +176,6 @@ curl "https://api.confetti.events/tickets?filter[eventId]=16969"
 }
 ```
 This endoint retreives all tickets.
-### HTTP Request
-`GET https://api.confetti.events/tickets`
 
 URL Parameter | Default | Values/Description
 - | - | - | -filter[eventId]* |  | number 
@@ -198,7 +196,7 @@ const confetti = new Confetti({ apiKey: 'your-key' })
 const ticket = await confetti.tickets.find(2)
         
 ```
-```javascript
+```json
 {
  "persons": 1,
  "hashid": "g265xg",
@@ -244,7 +242,7 @@ curl "https://api.confetti.events/tickets/2"
   -H "Authorization: apikey your-key"
         
 ```
-```shell
+```json
 {
  "data": {
   "id": "3344691",
@@ -290,7 +288,4 @@ curl "https://api.confetti.events/tickets/2"
 
 This endpoint retrieves a specific ticket.
 
-### HTTP Request
-`GET https://api.confetti.events/tickets/<ID>`
 
-  

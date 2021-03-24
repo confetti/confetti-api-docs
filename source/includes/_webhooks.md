@@ -9,7 +9,7 @@ const confetti = new Confetti({ apiKey: 'your-key' })
 const webhooks = await confetti.webhooks.findAll()
         
 ```
-```javascript
+```json
 [
  {
   "type": "ticket.attending",
@@ -39,7 +39,7 @@ curl "https://api.confetti.events/webhooks"
   -H "Authorization: apikey your-key"
         
 ```
-```shell
+```json
 {
  "data": [
   {
@@ -70,8 +70,6 @@ curl "https://api.confetti.events/webhooks"
 }
 ```
 This endoint retreives all webhooks.
-### HTTP Request
-`GET https://api.confetti.events/webhooks`
 
 URL Parameter | Default | Values/Description
 - | - | - | -filter[eventId] |  | number 
@@ -88,7 +86,7 @@ const confetti = new Confetti({ apiKey: 'your-key' })
 const webhook = await confetti.webhooks.find(2)
         
 ```
-```javascript
+```json
 {
  "type": "ticket.attending",
  "url": "http://foo.com/bar",
@@ -106,7 +104,7 @@ curl "https://api.confetti.events/webhooks/2"
   -H "Authorization: apikey your-key"
         
 ```
-```shell
+```json
 {
  "data": {
   "id": "1",
@@ -125,7 +123,4 @@ curl "https://api.confetti.events/webhooks/2"
 
 This endpoint retrieves a specific webhook.
 
-### HTTP Request
-`GET https://api.confetti.events/webhooks/<ID>`
 
-  

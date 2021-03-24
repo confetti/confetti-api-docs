@@ -14,23 +14,19 @@ const findWorkspace = (model) => {
 \`\`\`javascript
 ${code[endpoint].find.javascript()}
 \`\`\`
-\`\`\`javascript
+\`\`\`json
 ${JSON.stringify(model.sample.single.formatted, null, 1)}
 \`\`\`
 
 \`\`\`shell
 ${code[endpoint].find.shell()}
 \`\`\`
-\`\`\`shell
+\`\`\`json
 ${JSON.stringify(model.sample.single.raw, null, 1)}
 \`\`\`
 
 This endpoint retrieves your ${key}.
-
-### HTTP Request
-
-\`GET https://api.confetti.events/${endpoint}/<ID>\`
-  `
+`
 }
 
 const findOneExample = (model) => {
@@ -40,23 +36,21 @@ const findOneExample = (model) => {
 \`\`\`javascript
 ${code[endpoint].find.javascript()}
 \`\`\`
-\`\`\`javascript
+\`\`\`json
 ${JSON.stringify(model.sample.single.formatted, null, 1)}
 \`\`\`
 
 \`\`\`shell
 ${code[endpoint].find.shell()}
 \`\`\`
-\`\`\`shell
+\`\`\`json
 ${JSON.stringify(model.sample.single.raw, null, 1)}
 \`\`\`
 
 This endpoint retrieves a specific ${key}.
 
-### HTTP Request
-\`GET https://api.confetti.events/${endpoint}/<ID>\`
+`
 
-  `
   if (model.includes) {
     str += `
 URL Parameter | Default | Values/Description
@@ -75,7 +69,7 @@ const findAllExample = (model, { namePlural }) => {
   \`\`\`javascript
 ${code[endpoint].findAll.javascript()}
 \`\`\`
-\`\`\`javascript
+\`\`\`json
 ${JSON.stringify(model.sample.multiple.formatted, null, 1)}
 \`\`\`
 
@@ -83,13 +77,11 @@ ${JSON.stringify(model.sample.multiple.formatted, null, 1)}
 \`\`\`shell
 ${code[endpoint].findAll.shell()}
 \`\`\`
-\`\`\`shell
+\`\`\`json
 ${JSON.stringify(model.sample.multiple.raw, null, 1)}
 \`\`\`
 `
   str += `This endoint retreives all ${namePlural}.\n`
-  str += `### HTTP Request\n`
-  str += `\`GET https://api.confetti.events/${endpoint}\`\n`
 
   str += `
 URL Parameter | Default | Values/Description

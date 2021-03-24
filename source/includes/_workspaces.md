@@ -5,7 +5,7 @@
 ```javascript
 undefined
 ```
-```javascript
+```json
 {
  "id": 1,
  "name": "My workspace",
@@ -16,7 +16,7 @@ undefined
 ```shell
 undefined
 ```
-```shell
+```json
 {
  "data": {
   "id": 1,
@@ -30,7 +30,3 @@ undefined
 
 This endpoint retrieves your workspace.
 
-### HTTP Request
-
-`GET https://api.confetti.events/workspaces/<ID>`
-  

@@ -17,7 +17,7 @@ const events = await confetti.events.findAll({
 })
         
 ```
-```javascript
+```json
 [
  {
   "name": "My first event",
@@ -89,7 +89,7 @@ curl "https://api.confetti.events/events?filter[signupType]=rsvp"
   -H "Authorization: apikey your-key"
         
 ```
-```shell
+```json
 {
  "data": [
   {
@@ -168,8 +168,6 @@ curl "https://api.confetti.events/events?filter[signupType]=rsvp"
 }
 ```
 This endoint retreives all events.
-### HTTP Request
-`GET https://api.confetti.events/events`
 
 URL Parameter | Default | Values/Description
 - | - | - | -filter[signupType] |  | `rsvp`, `tickets` 
@@ -187,7 +185,7 @@ const confetti = new Confetti({ apiKey: 'your-key' })
 const event = await confetti.events.find(2)
         
 ```
-```javascript
+```json
 {
  "name": "My first event",
  "startDate": "2020-09-19T16:00:00.000Z",
@@ -229,7 +227,7 @@ curl "https://api.confetti.events/events/2"
   -H "Authorization: apikey your-key"
         
 ```
-```shell
+```json
 {
  "data": {
   "id": "16500",
@@ -275,10 +273,7 @@ curl "https://api.confetti.events/events/2"
 
 This endpoint retrieves a specific event.
 
-### HTTP Request
-`GET https://api.confetti.events/events/<ID>`
 
-  
 URL Parameter | Default | Values/Description
 - | - | - | - 
 include |  | `categories`, `pages`, `pages.blocks`, `pages.blocks.images`

@@ -17,7 +17,7 @@ const payments = await confetti.payments.findAll({
 })
         
 ```
-```javascript
+```json
 [
  {
   "name": "Foo Bar",
@@ -67,7 +67,7 @@ curl "https://api.confetti.events/payments?filter[eventId]=16969"
   -H "Authorization: apikey your-key"
         
 ```
-```shell
+```json
 {
  "data": [
   {
@@ -116,8 +116,6 @@ curl "https://api.confetti.events/payments?filter[eventId]=16969"
 }
 ```
 This endoint retreives all payments.
-### HTTP Request
-`GET https://api.confetti.events/payments`
 
 URL Parameter | Default | Values/Description
 - | - | - | -filter[eventId]* |  | number 
@@ -135,7 +133,7 @@ const confetti = new Confetti({ apiKey: 'your-key' })
 const payment = await confetti.payments.find(2)
         
 ```
-```javascript
+```json
 {
  "name": "Foo Bar",
  "email": "foo@bar.com",
@@ -166,7 +164,7 @@ curl "https://api.confetti.events/payments/2"
   -H "Authorization: apikey your-key"
         
 ```
-```shell
+```json
 {
  "data": {
   "id": "288298",
@@ -197,7 +195,4 @@ curl "https://api.confetti.events/payments/2"
 
 This endpoint retrieves a specific payment.
 
-### HTTP Request
-`GET https://api.confetti.events/payments/<ID>`
 
-  
