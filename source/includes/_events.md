@@ -1,7 +1,10 @@
 # Events
 ## Get all events
 
-  ```javascript
+
+> Example
+
+```javascript
         
 const Confetti = require('confetti')
 
@@ -17,7 +20,17 @@ const events = await confetti.events.findAll({
 })
         
 ```
-```json
+
+```shell
+
+curl "https://api.confetti.events/events?filter[signupType]=rsvp"
+  -H "Authorization: apikey your-key"
+        
+```
+
+> JSON Response
+
+```javascript
 [
  {
   "name": "My first event",
@@ -82,14 +95,7 @@ const events = await confetti.events.findAll({
 ]
 ```
 
-
 ```shell
-
-curl "https://api.confetti.events/events?filter[signupType]=rsvp"
-  -H "Authorization: apikey your-key"
-        
-```
-```json
 {
  "data": [
   {
@@ -177,6 +183,9 @@ page[offset] | 0 | Skip X results
 include |  | `categories`, `pages`, `pages.blocks`, `pages.blocks.images`
 
 ## Get a specific event
+
+> Example
+
 ```javascript
 
 const Confetti = require('confetti')
@@ -185,7 +194,17 @@ const confetti = new Confetti({ apiKey: 'your-key' })
 const event = await confetti.events.find(2)
         
 ```
-```json
+
+```shell
+
+curl "https://api.confetti.events/events/2"
+  -H "Authorization: apikey your-key"
+        
+```
+
+> JSON Response
+
+```javascript
 {
  "name": "My first event",
  "startDate": "2020-09-19T16:00:00.000Z",
@@ -222,12 +241,6 @@ const event = await confetti.events.find(2)
 ```
 
 ```shell
-
-curl "https://api.confetti.events/events/2"
-  -H "Authorization: apikey your-key"
-        
-```
-```json
 {
  "data": {
   "id": "16500",

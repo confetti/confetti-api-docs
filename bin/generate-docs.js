@@ -14,14 +14,14 @@ const findWorkspace = (model) => {
 \`\`\`javascript
 ${code[endpoint].find.javascript()}
 \`\`\`
-\`\`\`json
+\`\`\`javascript
 ${JSON.stringify(model.sample.single.formatted, null, 1)}
 \`\`\`
 
 \`\`\`shell
 ${code[endpoint].find.shell()}
 \`\`\`
-\`\`\`json
+\`\`\`shell
 ${JSON.stringify(model.sample.single.raw, null, 1)}
 \`\`\`
 
@@ -33,17 +33,24 @@ const findOneExample = (model) => {
   const { name, endpoint, key } = model
   str = `
 ## Get a specific ${key}
+
+> Example
+
 \`\`\`javascript
 ${code[endpoint].find.javascript()}
-\`\`\`
-\`\`\`json
-${JSON.stringify(model.sample.single.formatted, null, 1)}
 \`\`\`
 
 \`\`\`shell
 ${code[endpoint].find.shell()}
 \`\`\`
-\`\`\`json
+
+> JSON Response
+
+\`\`\`javascript
+${JSON.stringify(model.sample.single.formatted, null, 1)}
+\`\`\`
+
+\`\`\`shell
 ${JSON.stringify(model.sample.single.raw, null, 1)}
 \`\`\`
 
@@ -66,18 +73,24 @@ const findAllExample = (model, { namePlural }) => {
   let str = ''
   str += `## Get all ${namePlural}\n`
   str += `
-  \`\`\`javascript
+
+> Example
+
+\`\`\`javascript
 ${code[endpoint].findAll.javascript()}
 \`\`\`
-\`\`\`json
-${JSON.stringify(model.sample.multiple.formatted, null, 1)}
-\`\`\`
-
 
 \`\`\`shell
 ${code[endpoint].findAll.shell()}
 \`\`\`
-\`\`\`json
+
+> JSON Response
+
+\`\`\`javascript
+${JSON.stringify(model.sample.multiple.formatted, null, 1)}
+\`\`\`
+
+\`\`\`shell
 ${JSON.stringify(model.sample.multiple.raw, null, 1)}
 \`\`\`
 `

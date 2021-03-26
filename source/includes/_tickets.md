@@ -1,7 +1,10 @@
 # Tickets
 ## Get all tickets
 
-  ```javascript
+
+> Example
+
+```javascript
         
 const Confetti = require('confetti')
 
@@ -17,7 +20,17 @@ const tickets = await confetti.tickets.findAll({
 })
         
 ```
-```json
+
+```shell
+
+curl "https://api.confetti.events/tickets?filter[eventId]=16969"
+  -H "Authorization: apikey your-key"
+        
+```
+
+> JSON Response
+
+```javascript
 [
  {
   "persons": 1,
@@ -90,14 +103,7 @@ const tickets = await confetti.tickets.findAll({
 ]
 ```
 
-
 ```shell
-
-curl "https://api.confetti.events/tickets?filter[eventId]=16969"
-  -H "Authorization: apikey your-key"
-        
-```
-```json
 {
  "data": [
   {
@@ -188,6 +194,9 @@ page[offset] | 0 | Skip X results
 
 
 ## Get a specific ticket
+
+> Example
+
 ```javascript
 
 const Confetti = require('confetti')
@@ -196,7 +205,17 @@ const confetti = new Confetti({ apiKey: 'your-key' })
 const ticket = await confetti.tickets.find(2)
         
 ```
-```json
+
+```shell
+
+curl "https://api.confetti.events/tickets/2"
+  -H "Authorization: apikey your-key"
+        
+```
+
+> JSON Response
+
+```javascript
 {
  "persons": 1,
  "hashid": "g265xg",
@@ -237,12 +256,6 @@ const ticket = await confetti.tickets.find(2)
 ```
 
 ```shell
-
-curl "https://api.confetti.events/tickets/2"
-  -H "Authorization: apikey your-key"
-        
-```
-```json
 {
  "data": {
   "id": "3344691",

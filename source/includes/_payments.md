@@ -1,7 +1,10 @@
 # Payments
 ## Get all payments
 
-  ```javascript
+
+> Example
+
+```javascript
         
 const Confetti = require('confetti')
 
@@ -17,7 +20,17 @@ const payments = await confetti.payments.findAll({
 })
         
 ```
-```json
+
+```shell
+
+curl "https://api.confetti.events/payments?filter[eventId]=16969"
+  -H "Authorization: apikey your-key"
+        
+```
+
+> JSON Response
+
+```javascript
 [
  {
   "name": "Foo Bar",
@@ -60,14 +73,7 @@ const payments = await confetti.payments.findAll({
 ]
 ```
 
-
 ```shell
-
-curl "https://api.confetti.events/payments?filter[eventId]=16969"
-  -H "Authorization: apikey your-key"
-        
-```
-```json
 {
  "data": [
   {
@@ -125,6 +131,9 @@ page[offset] | 0 | Skip X results
 
 
 ## Get a specific payment
+
+> Example
+
 ```javascript
 
 const Confetti = require('confetti')
@@ -133,7 +142,17 @@ const confetti = new Confetti({ apiKey: 'your-key' })
 const payment = await confetti.payments.find(2)
         
 ```
-```json
+
+```shell
+
+curl "https://api.confetti.events/payments/2"
+  -H "Authorization: apikey your-key"
+        
+```
+
+> JSON Response
+
+```javascript
 {
  "name": "Foo Bar",
  "email": "foo@bar.com",
@@ -159,12 +178,6 @@ const payment = await confetti.payments.find(2)
 ```
 
 ```shell
-
-curl "https://api.confetti.events/payments/2"
-  -H "Authorization: apikey your-key"
-        
-```
-```json
 {
  "data": {
   "id": "288298",

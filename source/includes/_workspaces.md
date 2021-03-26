@@ -5,7 +5,7 @@
 ```javascript
 undefined
 ```
-```json
+```javascript
 {
  "id": 1,
  "name": "My workspace",
@@ -16,7 +16,7 @@ undefined
 ```shell
 undefined
 ```
-```json
+```shell
 {
  "data": {
   "id": 1,
