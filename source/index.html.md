@@ -22,7 +22,7 @@ code_clipboard: true
 
 # Introduction
 
-Welcome to the Confetti API reference.
+Welcome to the Confetti API reference. The easist way to access the API is via our [offical Node.js wrapper](http://github.com/confetti/confetti-node).
 
 # Authentication
 
