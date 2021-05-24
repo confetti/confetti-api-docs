@@ -248,8 +248,11 @@
 .highlight .kd {
   color: #cb4b16;
 }
-.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
   color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
 }
 .highlight .sr {
   color: #2aa198;
@@ -281,7 +284,7 @@
     </style>
     <link href="stylesheets/screen-b55e405f.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all_nosearch-ea811c3e.js"></script>
+      <script src="javascripts/all_nosearch-8f5ea5a5.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
@@ -372,7 +375,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Confetti API reference.</p>
+<p>Welcome to the Confetti API reference. The easist way to access the API is via our <a href="http://github.com/confetti/confetti-node">offical Node.js wrapper</a>.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
@@ -731,6 +734,7 @@ curl <span class="s2">"https://api.confetti.events/tickets?filter[eventId]=16969
   <span class="dl">"</span><span class="s2">currency</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">SEK</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Foo Bar</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">foo@bar.com</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">phone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">+46701111111</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">d92614282978451b7942fffda421df47740c</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">attending</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">emailStatus</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">subscribed</span><span class="dl">"</span><span class="p">,</span>
@@ -765,6 +769,7 @@ curl <span class="s2">"https://api.confetti.events/tickets?filter[eventId]=16969
   <span class="dl">"</span><span class="s2">currency</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">SEK</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Foo Bar</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">foo@bar.com</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">phone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">+46701111111</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">d92614282978451b7942fffda421df47740c</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">attending</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">emailStatus</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">subscribed</span><span class="dl">"</span><span class="p">,</span>
@@ -805,6 +810,7 @@ curl <span class="s2">"https://api.confetti.events/tickets?filter[eventId]=16969
     <span class="s2">"currency"</span>: <span class="s2">"SEK"</span>,
     <span class="s2">"name"</span>: <span class="s2">"Foo Bar"</span>,
     <span class="s2">"email"</span>: <span class="s2">"foo@bar.com"</span>,
+    <span class="s2">"phone"</span>: <span class="s2">"+46701111111"</span>,
     <span class="s2">"token"</span>: <span class="s2">"d92614282978451b7942fffda421df47740c"</span>,
     <span class="s2">"status"</span>: <span class="s2">"attending"</span>,
     <span class="s2">"emailStatus"</span>: <span class="s2">"subscribed"</span>,
@@ -841,6 +847,7 @@ curl <span class="s2">"https://api.confetti.events/tickets?filter[eventId]=16969
     <span class="s2">"currency"</span>: <span class="s2">"SEK"</span>,
     <span class="s2">"name"</span>: <span class="s2">"Foo Bar"</span>,
     <span class="s2">"email"</span>: <span class="s2">"foo@bar.com"</span>,
+    <span class="s2">"phone"</span>: <span class="s2">"+46701111111"</span>,
     <span class="s2">"token"</span>: <span class="s2">"d92614282978451b7942fffda421df47740c"</span>,
     <span class="s2">"status"</span>: <span class="s2">"attending"</span>,
     <span class="s2">"emailStatus"</span>: <span class="s2">"subscribed"</span>,
@@ -935,6 +942,7 @@ curl <span class="s2">"https://api.confetti.events/tickets/2"</span>
  <span class="dl">"</span><span class="s2">currency</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">SEK</span><span class="dl">"</span><span class="p">,</span>
  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Foo Bar</span><span class="dl">"</span><span class="p">,</span>
  <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">foo@bar.com</span><span class="dl">"</span><span class="p">,</span>
+ <span class="dl">"</span><span class="s2">phone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">+46701111111</span><span class="dl">"</span><span class="p">,</span>
  <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">d92614282978451b7942fffda421df47740c</span><span class="dl">"</span><span class="p">,</span>
  <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">attending</span><span class="dl">"</span><span class="p">,</span>
  <span class="dl">"</span><span class="s2">emailStatus</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">subscribed</span><span class="dl">"</span><span class="p">,</span>
@@ -976,6 +984,7 @@ curl <span class="s2">"https://api.confetti.events/tickets/2"</span>
    <span class="s2">"currency"</span>: <span class="s2">"SEK"</span>,
    <span class="s2">"name"</span>: <span class="s2">"Foo Bar"</span>,
    <span class="s2">"email"</span>: <span class="s2">"foo@bar.com"</span>,
+   <span class="s2">"phone"</span>: <span class="s2">"+46701111111"</span>,
    <span class="s2">"token"</span>: <span class="s2">"d92614282978451b7942fffda421df47740c"</span>,
    <span class="s2">"status"</span>: <span class="s2">"attending"</span>,
    <span class="s2">"emailStatus"</span>: <span class="s2">"subscribed"</span>,
